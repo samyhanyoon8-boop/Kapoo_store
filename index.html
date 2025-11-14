@@ -3,111 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر كابو الإلكتروني</title>
+    <title>متجر كابو الالكتروني</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <h1>متجر كابو الإلكتروني</h1>
-        <nav>
-            <a href="#pubg">قسم ببجي</a>
-            <a href="#freefire">قسم فري فاير</a>
-            <a href="#courses">تعليم المجال</a>
-        </nav>
+        <h1>متجر كابو الالكتروني</h1>
     </header>
 
-    <!-- قسم ببجي -->
-    <section id="pubg" class="section">
-        <h2>قسم ببجي</h2>
+    <div class="section">
+        <h2>ببجي</h2>
+        <label>اسم الحساب:</label>
+        <input type="text" id="pubgName" placeholder="اكتب اسم الحساب">
+        <label>الـID:</label>
+        <input type="text" id="pubgID" placeholder="اكتب الاي دي">
 
-        <div class="input-box">
-            <input type="text" id="pubg-id" placeholder="اكتب الاي دي">
-            <input type="text" id="pubg-name" placeholder="اسم الحساب">
+        <div class="products">
+            <button onclick="buy('ببجي', '60 شدات', 43)">60 شدات - 43 جنيه</button>
+            <button onclick="buy('ببجي', '120 شدات', 100)">120 شدات - 100 جنيه</button>
+            <button onclick="buy('ببجي', '325 شدات', 225)">325 شدات - 225 جنيه</button>
+            <button onclick="buy('ببجي', '660 شدات', 420)">660 شدات - 420 جنيه</button>
+            <button onclick="buy('ببجي', 'الكريستاله الحمراء', 140)">الكريستاله الحمراء - 140 جنيه</button>
+            <button onclick="buy('ببجي', 'شحن سيزون كامل', 200)">شحن سيزون كامل - 200 جنيه</button>
         </div>
+    </div>
 
-        <div class="items">
+    <div class="section">
+        <h2>فري فاير</h2>
+        <label>اسم الحساب:</label>
+        <input type="text" id="ffName" placeholder="اكتب اسم الحساب">
+        <label>الـID:</label>
+        <input type="text" id="ffID" placeholder="اكتب الاي دي">
 
-            <div class="item">
-                <p>60 شده - 45 جنيه</p>
-                <button onclick="buyPUBG('60 شده - 43 جنيه')">شراء</button>
-            </div>
-
-            <div class="item">
-                <p>120 شده - 100 جنيه</p>
-                <button onclick="buyPUBG('120 شده - 100 جنيه')">شراء</button>
-            </div>
-
-            <div class="item">
-                <p>325 شده - 225 جنيه</p>
-                <button onclick="buyPUBG('325 شده - 225 جنيه')">شراء</button>
-            </div>
-
-            <div class="item">
-                <p>660 شده - 420 جنيه</p>
-                <button onclick="buyPUBG('660 شده - 420 جنيه')">شراء</button>
-            </div>
-
-            <div class="item">
-                <p>الكريستاله الحمراء - 140 جنيه</p>
-                <button onclick="buyPUBG('الكريستاله الحمراء - 140 جنيه')">شراء</button>
-            </div>
-
-            <div class="item">
-                <p>شحن سيزون كامل - 200 جنيه</p>
-                <button onclick="buyPUBG('شحن سيزون كامل - 200 جنيه')">شراء</button>
-            </div>
-
+        <div class="products">
+            <button onclick="buy('فري فاير', 'عضوية أسبوعية', 70)">عضوية أسبوعية - 70 جنيه</button>
+            <button onclick="buy('فري فاير', '100 جوهره', 50)">100 جوهره - 50 جنيه</button>
+            <button onclick="buy('فري فاير', 'أدوية شهرية', 430)">أدوية شهرية - 430 جنيه</button>
         </div>
-    </section>
+    </div>
 
-    <!-- قسم فري فاير -->
-    <section id="freefire" class="section">
-        <h2>قسم فري فاير</h2>
-
-        <div class="input-box">
-            <input type="text" id="ff-id" placeholder="اكتب الاي دي">
-            <input type="text" id="ff-name" placeholder="اسم الحساب">
-        </div>
-
-        <div class="items">
-
-            <div class="item">
-                <p>عضوية أسبوعية - 70 جنيه</p>
-                <button onclick="buyFF('عضوية أسبوعية - 70 جنيه')">شراء</button>
-            </div>
-
-            <div class="item">
-                <p>100 جوهرة - 50 جنيه</p>
-                <button onclick="buyFF('100 جوهرة - 50 جنيه')">شراء</button>
-            </div>
-
-            <div class="item">
-                <p>عضوية شهرية - 430 جنيه</p>
-                <button onclick="buyFF('عضوية شهرية - 430 جنيه')">شراء</button>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- قسم تعليم المجال -->
-    <section id="courses" class="section">
+    <div class="section">
         <h2>تعليم المجال</h2>
+        <label>اسمك:</label>
+        <input type="text" id="eduName" placeholder="اكتب اسمك">
 
-        <div class="items">
-            <div class="item"><p>أرقام فيك</p> <button onclick="buyCourse('أرقام فيك')">شراء</button></div>
-            <div class="item"><p>سحب صور</p> <button onclick="buyCourse('سحب صور')">شراء</button></div>
-            <div class="item"><p>حظر وفك أرقام</p> <button onclick="buyCourse('حظر وفك أرقام')">شراء</button></div>
-            <div class="item"><p>طريقة عمل موقع</p> <button onclick="buyCourse('طريقة عمل موقع')">شراء</button></div>
-            <div class="item"><p>تطبيق سحب داتا مصر</p> <button onclick="buyCourse('تطبيق سحب داتا مصر')">شراء</button></div>
-            <div class="item"><p>تعديل كيبورد أو نسخة واتساب</p> <button onclick="buyCourse('تعديل كيبورد أو واتساب')">شراء</button></div>
+        <div class="products">
+            <button onclick="buy('تعليم المجال', 'ارقام فيك')">ارقام فيك</button>
+            <button onclick="buy('تعليم المجال', 'سحب صور')">سحب صور</button>
+            <button onclick="buy('تعليم المجال', 'حظر وفك ارقام')">حظر وفك ارقام</button>
+            <button onclick="buy('تعليم المجال', 'طريقة عمل موقع')">طريقة عمل موقع</button>
+            <button onclick="buy('تعليم المجال', 'تطبيق سحب داتا مصر')">تطبيق سحب داتا مصر</button>
+            <button onclick="buy('تعليم المجال', 'تعديل على كيبورد/نسخة وتساب')">تعديل على كيبورد/نسخة وتساب</button>
         </div>
-    </section>
+    </div>
 
-    <footer>
-        <p>الدفع متاح عبر فودافون كاش: 01032675967</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
