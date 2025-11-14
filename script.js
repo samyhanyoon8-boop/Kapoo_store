@@ -1,55 +1,33 @@
-const whatsappNumber = "201284070117";
+function buy(section, product, price = null) {
+    let name, id, message;
 
-// ببجي
-function buyPUBG(product) {
-    let id = document.getElementById("pubg-id").value;
-    let name = document.getElementById("pubg-name").value;
-
-    if(!id || !name){
-        alert("من فضلك اكتب الاي دي واسم الحساب!");
-        return;
+    if(section === 'ببجي'){
+        name = document.getElementById('pubgName').value;
+        id = document.getElementById('pubgID').value;
+        if(!name || !id){
+            alert("من فضلك اكتب اسم الحساب و الاي دي");
+            return;
+        }
+        message = `مرحبا! لقد تم شراء المنتج: ${product} \nالسعر: ${price} جنيه \nاسم الحساب: ${name} \nالـID: ${id}`;
+    }
+    else if(section === 'فري فاير'){
+        name = document.getElementById('ffName').value;
+        id = document.getElementById('ffID').value;
+        if(!name || !id){
+            alert("من فضلك اكتب اسم الحساب و الاي دي");
+            return;
+        }
+        message = `مرحبا! لقد تم شراء المنتج: ${product} \nالسعر: ${price} جنيه \nاسم الحساب: ${name} \nالـID: ${id}`;
+    }
+    else if(section === 'تعليم المجال'){
+        name = document.getElementById('eduName').value;
+        if(!name){
+            alert("من فضلك اكتب اسمك");
+            return;
+        }
+        message = `مرحبا! لقد تم شراء المنتج: ${product} \nاسم المشتري: ${name}`;
     }
 
-    let message = `طلب جديد من متجر كابو:
-اللعبة: ببجي
-الاي دي: ${id}
-اسم الحساب: ${name}
-المنتج: ${product}
-الدفع: فودافون كاش 01032675967`;
-
-    openWhatsApp(message);
-}
-
-// فري فاير
-function buyFF(product) {
-    let id = document.getElementById("ff-id").value;
-    let name = document.getElementById("ff-name").value;
-
-    if(!id || !name){
-        alert("من فضلك اكتب الاي دي واسم الحساب!");
-        return;
-    }
-
-    let message = `طلب جديد من متجر كابو:
-اللعبة: فري فاير
-الاي دي: ${id}
-اسم الحساب: ${name}
-المنتج: ${product}
-الدفع: فودافون كاش 01032675967`;
-
-    openWhatsApp(message);
-}
-
-// تعليم المجال
-function buyCourse(product){
-    let message = `طلب جديد من متجر كابو:
-الخدمة: ${product}`;
-
-    openWhatsApp(message);
-}
-
-// فتح واتساب
-function openWhatsApp(message){
-    let url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.location.href = url;
+    const whatsappNumber = "01284070117";
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
 }
