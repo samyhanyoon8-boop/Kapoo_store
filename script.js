@@ -1,4 +1,4 @@
-const whatsappNumber = "01284070117";
+const whatsappNumber = "201284070117";
 
 // ببجي
 function buyPUBG(product) {
